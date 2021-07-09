@@ -8,7 +8,7 @@ Boilerplate para aplicações web em [React](https://reactjs.org) com [Mobx](htt
 
 - [Mobx React](https://www.npmjs.com/package/mobx-react) - Aditivo ao Mobx que disponibiliza funções para interação com o ciclo de vida do React e auxilia na observação de mudanças no estado das stores por parte de componentes.
 
-- [Mobx Easy](https://www.npmjs.com/package/mobx-easy) - Aditivo ao Mobx utilizado para facilitar o encapsulamento das stores possibilitando o acesso à uma store a partir de outra e organização de ambientes para chamadas http.
+- [Mobx Easy](https://www.npmjs.com/package/mobx-easy) - Aditivo ao Mobx utilizado para facilitar o encapsulamento das stores possibilitando o acesso à uma store a partir de outra e organização de ambientes para chamadas HTTP.
 
 - [React Router](https://reactrouter.com/web) - Gerenciamento de rotas.
 
