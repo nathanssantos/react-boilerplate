@@ -53,3 +53,61 @@ Boilerplate para aplicações web em [React](https://reactjs.org) com [Mobx](htt
 - [Eslint Config Prettier](https://www.npmjs.com/package/eslint-config-prettier) - Desativa regras que poderiam causar conflito entre o Prettier o Eslint.
 
 - [Pretty Quick](https://www.npmjs.com/package/pretty-quick) - Executa a formatação do Prettier ao salvar os arquivos modificados.
+
+## Estrutura
+
+![Folder Structure](./src/docs/folders.png)
+
+### `src/assets`
+
+Imagens, arquivos de fontes e outros assets.
+
+![assets](./src/docs/assets.png)
+
+### `src/components`
+
+Todos os componentes do projeto. Utilizar `index.js` para organizar múltiplos imports de components no mesmo arquivo.
+
+![components](./src/docs/components.png)
+
+### `src/constants`
+
+Arquivos de constantes como o 'Theme.js' que guarda a configuração de cores e fontes do Material UI (além de outras), 'Messages' contendo as mensagens de feedback em validações de input e toasts e outros.
+
+![constants](./src/docs/constants.png)
+
+### `src/hooks`
+
+Hooks custom. Utilizar `index.js` para organizar múltiplos imports de hooks no mesmo arquivo.
+
+![hooks](./src/docs/hooks.png)
+
+### `src/screens`
+
+Todas as telas do projeto. Utilizar `index.js` para organizar múltiplos imports de screens no mesmo arquivo.
+
+![screens](./src/docs/screens.png)
+
+### `src/scss`
+
+Todos os arquivos de estilo globais do projeto. Criar um `index.scss` e importá-lo no arquivo `index.js` no root do projeto.
+
+![scss](./src/docs/scss.png)
+
+### `src/services`
+
+Instâncias de clientes HTTP para realização de chamadas assíncronas, módulos para conexão com serviços específicos e outros.
+
+![scss](./src/docs/services.png)
+
+### `src/stores`
+
+Containers que guardam as actions e e realizam o gerenciamento de estado por seção da aplicação e models de entidades.
+
+![scss](./src/docs/stores.png)
+
+### `src/utils`
+
+Utilitários e funções helper diversas. Utilizar `index.js` para organizar múltiplos imports de utils no mesmo arquivo.
+
+![scss](./src/docs/utils.png)
