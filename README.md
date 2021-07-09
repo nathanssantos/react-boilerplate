@@ -14,7 +14,7 @@ Boilerplate para aplicações web em [React](https://reactjs.org) com [Mobx](htt
 
 - [Axios](https://www.npmjs.com/package/axios) - Cliente HTTP baseado em promises utilizado para realizar requisições.
 
-- [Prop Types](https://www.npmjs.com/package/prop-types) - Checagem tipo para props de componentes.
+- [Prop Types](https://www.npmjs.com/package/prop-types) - Checagem de tipo para props.
 
 - [Formik](https://formik.org) - Gerência de formulários.
 
