@@ -2,7 +2,7 @@ import React from 'react';
 import Theme from '../../constants/Theme';
 
 const Logo = (props) => {
-  const { color = Theme.palette.primary.main } = props;
+  const { color = Theme.primary } = props;
 
   return (
     <svg width='264' height='80' viewBox='0 0 132 40' fill='none'>

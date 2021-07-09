@@ -1,10 +1,14 @@
-const theme = {
+const primary = '#3498db';
+
+const Theme = {
+  primary,
+
   palette: {
     type: 'dark',
     primary: {
-      main: '#3498db',
+      main: primary,
     },
   },
 };
 
-export default theme;
+export default Theme;
