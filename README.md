@@ -66,7 +66,7 @@ Imagens, arquivos de fontes e outros assets.
 
 ### `src/components`
 
-Todos os componentes do projeto. Utilizar `index.js` para organizar múltiplos imports de components no mesmo arquivo.
+Todos os componentes do projeto. Criar um arquivo `index.js` para organizar múltiplos imports de components no mesmo arquivo.
 
 ![components](./src/docs/components.png)
 
@@ -78,36 +78,36 @@ Arquivos de constantes como o 'Theme.js' que guarda a configuração de cores e 
 
 ### `src/hooks`
 
-Hooks custom. Utilizar `index.js` para organizar múltiplos imports de hooks no mesmo arquivo.
+Hooks customizados. Criar um arquivo `index.js` para organizar múltiplos imports de hooks no mesmo arquivo.
 
 ![hooks](./src/docs/hooks.png)
 
 ### `src/screens`
 
-Todas as telas do projeto. Utilizar `index.js` para organizar múltiplos imports de screens no mesmo arquivo.
+Todas as telas do projeto. Criar um arquivo `index.js` para organizar múltiplas importações de screens no mesmo arquivo.
 
 ![screens](./src/docs/screens.png)
 
 ### `src/scss`
 
-Todos os arquivos de estilo globais do projeto. Criar um `index.scss` e importá-lo no arquivo `index.js` no root do projeto.
+Todos os arquivos de estilo globais do projeto. Criar um arquivo `index.scss` e importá-lo no arquivo `index.js` na raíz do projeto.
 
 ![scss](./src/docs/scss.png)
 
 ### `src/services`
 
-Instâncias de clientes HTTP para realização de chamadas assíncronas, módulos para conexão com serviços específicos e outros.
+Instâncias de clients HTTP para realização de chamadas assíncronas, módulos para conexão com serviços específicos e outros.
 
 ![scss](./src/docs/services.png)
 
 ### `src/stores`
 
-Containers que guardam as actions e e realizam o gerenciamento de estado por seção da aplicação e models de entidades.
+Containers que guardam as actions e gerenciam o estado da aplicação por seção e models de entidades.
 
 ![scss](./src/docs/stores.png)
 
 ### `src/utils`
 
-Utilitários e funções helper diversas. Utilizar `index.js` para organizar múltiplos imports de utils no mesmo arquivo.
+Utilitários e funções helper diversas. Criar um arquivo `index.js` para organizar múltiplos imports de utils no mesmo arquivo.
 
 ![scss](./src/docs/utils.png)
