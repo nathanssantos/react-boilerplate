@@ -4,7 +4,7 @@ Boilerplate para aplicações web em [React](https://reactjs.org) com [Mobx](htt
 
 ## Dependências
 
-- [Mobx](https://mobx.js.org) - Gerenciamento de estados.
+- [Mobx](https://mobx.js.org) - Gerenciamento de estado.
 
 - [Mobx React](https://www.npmjs.com/package/mobx-react) - Aditivo ao Mobx que disponibiliza funções para interação com o ciclo de vida do React e auxilia na observação de mudanças no estado das stores por parte de componentes.
 
