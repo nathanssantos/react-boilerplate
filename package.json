@@ -23,6 +23,18 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages -d dist"
   },
+  "keywords": [
+    "react",
+    "boilerplate",
+    "eslint",
+    "mobx",
+    "material-ui",
+    "prettier",
+    "yup",
+    "formik",
+    "vite",
+    "vitejs"
+  ],
   "dependencies": {
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
