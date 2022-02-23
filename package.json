@@ -10,16 +10,18 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nathanssantos/clockify-teams.git"
+    "url": "git+https://github.com/nathanssantos/react-vite-boilerplate.git"
   },
   "bugs": {
-    "url": "https://github.com/nathanssantos/clockify-teams/issues"
+    "url": "https://github.com/nathanssantos/react-vite-boilerplate/issues"
   },
-  "homepage": "https://nathanssantos.github.io/clockify-teams",
+  "homepage": "https://nathanssantos.github.io/react-vite-boilerplate",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "vite",
+    "build": "vite build --base=./",
+    "preview": "vite preview",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.8.1",
