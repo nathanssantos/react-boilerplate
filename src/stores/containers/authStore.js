@@ -1,103 +1,73 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-import { action, flow, computed, makeObservable, observable } from 'mobx';
+import { makeAutoObservable } from 'mobx';
 import { getEnv } from 'mobx-easy';
-import { toast } from 'react-toastify';
 
-import { useLocalStorage } from '../../hooks';
-
-import { User } from '../models';
-
-import {
-  SYSTEM_INSTABILITY,
-  INVALID_EMAIL_OR_PASSWORD,
-} from '../../constants/Messages';
+import User from '../models/User';
 
 export default class AuthStore {
+  /**
+   * @type {?import('../models/User').default}
+   */
   user = null;
+
+  /**
+   * @type {'pending' | 'authenticated' | 'unauthenticated'}
+   */
   status = 'unauthenticated';
 
   constructor() {
-    makeObservable(this, {
-      user: observable,
-      status: observable,
-
-      isAuthenticated: computed,
-
-      setUser: action.bound,
-      unauthenticate: action.bound,
-
-      authenticate: flow,
-    });
+    makeAutoObservable(this);
   }
 
   get isAuthenticated() {
     return this.status === 'authenticated';
   }
 
-  setUser(user) {
-    this.user = User.fromApi(user);
+  get isFetching() {
+    return this.status === 'pending';
   }
+
+  authenticate = async (payload) => {
+    try {
+      const { email, password, mock } = payload;
+
+      if (mock) {
+        console.log({ email, password });
+        this.status = 'authenticated';
+        return true;
+      }
+
+      this.status = 'pending';
+
+      const response = await getEnv().post('/auth', { email, password });
+
+      const { data, status } = response;
+
+      if (status !== 200 || !data) {
+        this.unauthenticate();
+        return {
+          error: {
+            status,
+            // message: ""
+          },
+        };
+      }
+
+      this.user = new User(data);
+
+      this.status = 'authenticated';
+
+      return true;
+    } catch (error) {
+      this.unauthenticate();
+
+      return {
+        error,
+      };
+    }
+  };
 
   unauthenticate() {
     this.status = 'unauthenticated';
     this.user = null;
-    getEnv().defaults.headers.common.Authorization = null;
-  }
-
-  *authenticate(payload) {
-    try {
-      // const { email, password, token } = payload;
-      const [, setToken] = useLocalStorage('token');
-
-      // let response = null;
-      // if (token) {
-      //   response = yield getEnv().post(`/auth`, { token });
-      // } else {
-      //   response = yield getEnv().post(`/auth`, { email, password });
-      // }
-
-      // Mock
-      const response = {
-        status: 200,
-        data: {
-          user: {
-            id: 1,
-          },
-          token: 'TOKEN',
-        },
-      };
-      // End Mock
-
-      if (response?.status === 401) {
-        toast(INVALID_EMAIL_OR_PASSWORD);
-        return false;
-      }
-
-      if (response?.status !== 200) {
-        toast(SYSTEM_INSTABILITY);
-        return false;
-      }
-
-      if (response?.data?.token && response?.data?.user) {
-        const { token, user } = response.data;
-
-        setToken(token);
-        this.setUser(user);
-
-        this.status = 'authenticated';
-
-        return true;
-      }
-
-      this.unauthenticate();
-      return false;
-    } catch (error) {
-      toast(SYSTEM_INSTABILITY);
-
-      console.log('authStore authenticate ERROR:', error);
-
-      this.unauthenticate();
-      return false;
-    }
   }
 }

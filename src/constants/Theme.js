@@ -1,14 +1,18 @@
-const primary = '#3498db';
+import { createTheme } from '@mui/material/styles';
 
-const Theme = {
-  primary,
+const theme = createTheme({
+  // palette: {
+  //   mode: 'dark',
+  //   primary: {
+  //     main: '#ecf0f1',
+  //   },
+  //   secondary: {
+  //     main: '#2ecc71',
+  //   },
+  //   background: {
+  //     default: '#222',
+  //   },
+  // },
+});
 
-  palette: {
-    type: 'dark',
-    primary: {
-      main: primary,
-    },
-  },
-};
-
-export default Theme;
+export default theme;

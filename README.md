@@ -1,113 +1,169 @@
-# React Boilerplate
+# React Native Boilerplate
 
-Boilerplate for React web applications built with Mobx as state manager and Material UI as component library.
+Boilerplate for [React.js](https://pt-br.reactjs.org) applications built with [Mobx](https://mobx.js.org) as a state manager, [Material UI](https://mui.com/) as a component library, and [Vite] as a frontend build tool.
 
-## Dependências
+## Dependencies
 
-- [Mobx](https://mobx.js.org) - Gerenciamento de estado.
+### `@emotion/react`
 
-- [Mobx React](https://www.npmjs.com/package/mobx-react) - Aditivo ao Mobx que disponibiliza funções para interação com o ciclo de vida do React e auxilia na observação de mudanças no estado das stores por parte de componentes.
+[Github](https://github.com/emotion-js/emotion/tree/main/packages/react) | [NPM](https://www.npmjs.com/package/@emotion/react)
 
-- [Mobx Easy](https://www.npmjs.com/package/mobx-easy) - Aditivo ao Mobx utilizado para facilitar o encapsulamento das stores possibilitando o acesso à uma store a partir de outra e organização de ambientes para chamadas HTTP.
+The @emotion/react package requires React and is recommended for users of that framework if possible.
 
-- [React Router](https://reactrouter.com/web) - Gerenciamento de rotas.
+### `@emotion/styled`
 
-- [Axios](https://www.npmjs.com/package/axios) - Cliente HTTP baseado em promises utilizado para realizar requisições.
+[Github](https://github.com/emotion-js/emotion/tree/main/packages/styled) | [NPM](https://www.npmjs.com/package/@emotion/styled)
 
-- [Prop Types](https://www.npmjs.com/package/prop-types) - Checagem de tipo para props.
+The @emotion/styled package is for those who prefer to use the styled.div style API for creating components.
 
-- [Formik](https://formik.org) - Gerência de formulários.
+### `@fontsource/roboto`
 
-- [Yup](https://www.npmjs.com/package/yup) - Criador de schemas para validação e parse de valores. Utilizado junto ao Formik.
+[Github](https://github.com/fontsource/fontsource) | [NPM](https://www.npmjs.com/package/@fontsource/roboto)
 
-- [Sass](https://www.npmjs.com/package/sass) - Pré-processador CSS.
+The CSS and web font files to easily self-host the “Roboto” font.
 
-- [Material UI](https://material-ui.com) - Biblioteca de componentes.
+### `@mui/icons-material`
 
-- [Fontsource Roboto](https://www.npmjs.com/package/@fontsource/roboto) - Fonte Roboto. Dependência do Material UI. **Este pacote pode ser ignorado no caso de uso de outra fonte no projeto.**
+[Github](https://github.com/mui/material-ui) | [NPM](https://www.npmjs.com/package/@mui/icons-material)
 
-- [Material UI Icons](https://material-ui.com/pt/components/material-icons) - Biblioteca de ícones. Dependência do Material UI.
+This package provides the Google Material icons packaged as a set of React components.
 
-- [Material UI Pickers](https://material-ui-pickers.dev) - Date e time pickers.
+### `@mui/material`
 
-- [Date IO / Date FNS](https://www.npmjs.com/package/@date-io/date-fns) - Tratamento de datas. Dependência do Material UI Pickers.
+[Github](https://github.com/mui/material-ui) | [NPM](https://www.npmjs.com/package/@mui/material)
 
-- [React Toastify](https://www.npmjs.com/package/react-toastify) - Biblioteca de Toasts customizáveis.
+Quickly build beautiful React apps. MUI is a simple and customizable component library to build faster, beautiful, and more accessible React applications.
 
-## Dependências de desenvolvimento
+### `axios`
 
-- [Eslint](https://eslint.org) - Linter.
+[Github](https://github.com/axios/axios) | [NPM](https://www.npmjs.com/package/axios)
 
-- [Babel Eslint](https://www.npmjs.com/package/babel-eslint) - Interface entre o Babel e o Eslint.
+Promise based HTTP client for the browser and node.js.
 
-- [Eslint Plugin React](https://www.npmjs.com/package/eslint-plugin-react) - Regras para lint de projetos React.
+### `formik`
 
-- [Eslint Config React App](https://www.npmjs.com/package/eslint-config-react-app) - Regras para lint de projetos React.
+[Github](https://github.com/jaredpalmer/formik) | [NPM](https://www.npmjs.com/package/formik)
 
-- [Eslint Plugin React Hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) - Regras para lint de React Hooks.
+Formik is the world's most popular open source form library for React and React Native.
 
-- [Prettier](https://prettier.io) - Formatador de código.
+### `mobx`
 
-- [Eslint Plugin Prettier](https://www.npmjs.com/package/eslint-plugin-prettier) - Interface entre o Eslint e o Prettier.
+[Github](https://github.com/mobxjs/mobx) | [NPM](https://www.npmjs.com/package/mobx)
 
-- [Eslint Config Prettier](https://www.npmjs.com/package/eslint-config-prettier) - Desativa regras que poderiam causar conflito entre o Prettier o Eslint.
+MobX is a battle tested library that makes state management simple and scalable by transparently applying functional reactive programming (TFRP).
 
-- [Pretty Quick](https://www.npmjs.com/package/pretty-quick) - Executa a formatação do Prettier ao salvar os arquivos modificados.
+### `mobx-easy`
 
-## Estrutura
+[Github](https://github.com/stolenng/mobx-easy) | [NPM](https://www.npmjs.com/package/mobx-easy)
 
-![Folder Structure](./src/docs/folders.png)
+Mobx Easy is simple library that makes your day to day mobx usage easier and adds some extra abilities.
 
-### `src/assets`
+### `mobx-react`
 
-Imagens, arquivos de fontes e outros assets.
+[Github](https://github.com/mobxjs/mobx) | [NPM](https://www.npmjs.com/package/mobx-react)
 
-![assets](./src/docs/assets.png)
+Package with React component wrapper for combining React with MobX. Exports the observer decorator and other utilities. For documentation, see the MobX project. This package supports both React and React Native.
 
-### `src/components`
+### `prop-types`
 
-Todos os componentes do projeto. Criar um arquivo `index.js` para organizar múltiplos imports de components no mesmo arquivo.
+[Github](https://github.com/facebook/prop-types) | [NPM](https://www.npmjs.com/package/prop-types)
 
-![components](./src/docs/components.png)
+Runtime type checking for React props and similar objects.
 
-### `src/constants`
+### `react`
 
-Arquivos de constantes como o 'Theme.js' que guarda a configuração de cores e fontes do Material UI (além de outras), 'Messages' contendo as mensagens de feedback em validações de input e toasts e outros.
+[Github](https://github.com/facebook/react) | [NPM](https://www.npmjs.com/package/react)
 
-![constants](./src/docs/constants.png)
+React is a JavaScript library for building user interfaces.
 
-### `src/hooks`
+### `react-dom`
 
-Hooks customizados. Criar um arquivo `index.js` para organizar múltiplos imports de hooks no mesmo arquivo.
+[Github](https://github.com/facebook/react) | [NPM](https://www.npmjs.com/package/react-dom)
 
-![hooks](./src/docs/hooks.png)
+This package serves as the entry point to the DOM and server renderers for React. It is intended to be paired with the generic React package, which is shipped as react to npm.
 
-### `src/screens`
+### `react-router-dom`
 
-Todas as telas do projeto. Criar um arquivo `index.js` para organizar múltiplas importações de screens no mesmo arquivo.
+[Github](https://github.com/remix-run/react-router) | [NPM](https://www.npmjs.com/package/react-router-dom)
 
-![screens](./src/docs/screens.png)
+React Router is a lightweight, fully-featured routing library for the React JavaScript library. React Router runs everywhere that React runs; on the web, on the server (using node.js), and on React Native.
 
-### `src/scss`
+### `yup`
 
-Todos os arquivos de estilo globais do projeto. Criar um arquivo `index.scss` e importá-lo no arquivo `index.js` na raíz do projeto.
+[Github](https://github.com/jquense/yup) | [NPM](https://www.npmjs.com/package/yup)
 
-![scss](./src/docs/scss.png)
+Yup is a schema builder for runtime value parsing and validation. Define a schema, transform a value to match, assert the shape of an existing value, or both. Yup schema are extremely expressive and allow modeling complex, interdependent validations, or value transformation.
 
-### `src/services`
+## Dev Dependencies
 
-Instâncias de clients HTTP para realização de chamadas assíncronas, módulos para conexão com serviços específicos e outros.
+### `@vitejs/plugin-react`
 
-![scss](./src/docs/services.png)
+[Github](https://github.com/vitejs/vite) | [NPM](https://www.npmjs.com/package/@vitejs/plugin-react)
 
-### `src/stores`
+The all-in-one Vite plugin for React projects.
 
-Containers que guardam as actions e gerenciam o estado da aplicação por seção e models de entidades.
+### `eslint`
 
-![scss](./src/docs/stores.png)
+[Github](https://github.com/eslint/eslint) | [NPM](https://www.npmjs.com/package/eslint)
 
-### `src/utils`
+ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
 
-Utilitários e funções helper diversas. Criar um arquivo `index.js` para organizar múltiplos imports de utils no mesmo arquivo.
+### `eslint-config-airbnb`
 
-![scss](./src/docs/utils.png)
+[Github](https://github.com/airbnb/javascript) | [NPM](https://www.npmjs.com/package/eslint-config-airbnb)
+
+This package provides Airbnb's .eslintrc as an extensible shared config.
+
+### `eslint-config-prettier`
+
+[Github](https://github.com/prettier/eslint-config-prettier) | [NPM](https://www.npmjs.com/package/eslint-config-prettier)
+
+Turns off all rules that are unnecessary or might conflict with Prettier.
+
+### `eslint-plugin-import`
+
+[Github](https://github.com/import-js/eslint-plugin-import) | [NPM](https://www.npmjs.com/package/eslint-plugin-import)
+
+This plugin intends to support linting of ES2015+ (ES6+) import/export syntax, and prevent issues with misspelling of file paths and import names. All the goodness that the ES2015+ static module syntax intends to provide, marked up in your editor.
+
+### `eslint-plugin-jsx-a11y`
+
+[Github](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y) | [NPM](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
+
+Static AST checker for accessibility rules on JSX elements.
+
+### `eslint-plugin-prettier`
+
+[Github](https://github.com/prettier/eslint-plugin-prettier) | [NPM](https://www.npmjs.com/package/eslint-plugin-prettier)
+
+Runs Prettier as an ESLint rule and reports differences as individual ESLint issues.
+
+### `eslint-plugin-react`
+
+[Github](https://github.com/yannickcr/eslint-plugin-react) | [NPM](https://www.npmjs.com/package/eslint-plugin-react)
+
+React specific linting rules for eslint.
+
+### `eslint-plugin-react-hooks`
+
+[Github](https://github.com/facebook/react) | [NPM](https://www.npmjs.com/package/eslint-plugin-react-hooks)
+
+This ESLint plugin enforces the Rules of Hooks.
+
+### `gh-pages`
+
+[Github](https://github.com/tschaub/gh-pages) | [NPM](https://www.npmjs.com/package/gh-pages)
+
+Publish files to a gh-pages branch on GitHub (or any other branch anywhere else).
+
+### `prettier`
+
+[Github](https://github.com/prettier/prettier) | [NPM](https://www.npmjs.com/package/prettier)
+
+Prettier is an opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.
+
+### `vite`
+
+[Github](https://github.com/vitejs/vite) | [NPM](https://www.npmjs.com/package/vite)
+
+Frontend build tool.
