@@ -1,6 +1,6 @@
 # React Vite Boilerplate
 
-Boilerplate for [React.js](https://pt-br.reactjs.org) applications built with [Mobx](https://mobx.js.org) as a state manager, [Material UI](https://mui.com) as a component library, and [Vite](https://vitejs.dev) as a frontend build tool.
+Boilerplate for [React.js](https://pt-br.reactjs.org) applications, built with [Mobx](https://mobx.js.org) as a state manager, [Material UI](https://mui.com) as a component library, and [Vite](https://vitejs.dev) as a frontend build tool.
 
 ## Dependencies
 
