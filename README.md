@@ -1,4 +1,4 @@
-# React Web Boilerplate
+# React Boilerplate
 
 Boilerplate para aplicações web em [React](https://reactjs.org) com [Mobx](https://mobx.js.org) na gerência de estados e [Material UI](https://material-ui.com) como biblioteca de componentes.
 
