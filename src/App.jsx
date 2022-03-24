@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import createRootStore from './stores/createRootStore';
 import { RootStoreProvider } from './hooks';
-import { Router } from './components';
+import { Router, ThemeProvider } from './components';
 
 const App = () => {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -27,7 +27,9 @@ const App = () => {
 
   return (
     <RootStoreProvider value={rootStore}>
-      <Router />
+      <ThemeProvider>
+        <Router />
+      </ThemeProvider>
     </RootStoreProvider>
   );
 };
