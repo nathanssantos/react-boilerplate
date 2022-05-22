@@ -1,40 +1,25 @@
 import { useEffect, useState } from 'react';
-import { AxiosError } from 'axios';
 import { RootStoreProvider } from './hooks';
 import { Router, ThemeProvider } from './components';
 import RootStore from './stores/containers/rootStore';
-import api from './services/api';
 
 const App = () => {
-  const [appIsReady, setAppIsReady] = useState(false);
   const [rootStore, setRootStore] = useState({} as RootStore);
+  const [appIsReady, setAppIsReady] = useState(false);
 
   const init = async () => {
     try {
       const store = new RootStore();
-
-      api.interceptors.response.use(
-        (response) => {
-          return response;
-        },
-        (error: AxiosError) => {
-          if (error?.response?.status === 401) {
-            rootStore.authStore.unauthenticate();
-          }
-          return error;
-        },
-      );
-
       setRootStore(store);
-    } catch (e) {
-      console.error(e);
+    } catch (error) {
+      console.error(error);
     } finally {
       setAppIsReady(true);
     }
   };
 
   useEffect(() => {
-    init();
+    if (!appIsReady) init();
   }, []);
 
   if (!appIsReady) return null;

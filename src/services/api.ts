@@ -6,7 +6,7 @@ const api = axios.create({
   validateStatus: (status) => status !== 401,
 });
 
-const token = Cookies.get('sveltetsboilerplate.token');
+const token = Cookies.get('reacttsboilerplate.token');
 
 if (token?.length) api.defaults.headers.common['Authorization'] = token;
 

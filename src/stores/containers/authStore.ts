@@ -1,5 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 import Cookies from 'js-cookie';
+import { AxiosError } from 'axios';
 import type { AxiosResponse } from 'axios';
 import RootStore from './rootStore';
 import User from '../models/User';
@@ -15,13 +16,23 @@ export default class AuthStore {
     makeAutoObservable(this, { rootStore: false });
     this.rootStore = rootStore;
 
-    if (Cookies.get('sveltetsboilerplate.token')?.length) void this.getMe();
+    api.interceptors.response.use(
+      (response) => {
+        return response;
+      },
+      (error: AxiosError) => {
+        if (error?.response?.status === 401) {
+          this.unauthenticate();
+        }
+        return error;
+      },
+    );
+
+    if (Cookies.get('reacttsboilerplate.token')?.length) this.getMe();
   }
 
   get isAuthenticated() {
-    return (
-      !!Cookies.get('sveltetsboilerplate.token')?.length && !!this.user?.id
-    );
+    return !!Cookies.get('reacttsboilerplate.token')?.length && !!this.user?.id;
   }
 
   authenticate = async (payload: {
@@ -50,7 +61,7 @@ export default class AuthStore {
         };
       }
 
-      Cookies.set('sveltetsboilerplate.token', data.access_token, {
+      Cookies.set('reacttsboilerplate.token', data.access_token, {
         expires: 7,
       });
 
@@ -106,7 +117,7 @@ export default class AuthStore {
 
   unauthenticate() {
     api.defaults.headers.common['Authorization'] = '';
-    Cookies.remove('sveltetsboilerplate.token');
+    Cookies.remove('reacttsboilerplate.token');
     this.user = null;
   }
 }
