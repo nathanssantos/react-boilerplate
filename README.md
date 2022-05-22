@@ -1,6 +1,6 @@
 # React Vite Boilerplate
 
-Boilerplate for [React.js](https://pt-br.reactjs.org) applications, built with [Mobx](https://mobx.js.org) as a state manager, [Material UI](https://mui.com) as a component library, and [Vite](https://vitejs.dev) as a frontend build tool.
+Boilerplate for [React.js](https://pt-br.reactjs.org) applications, built with [Mobx](https://mobx.js.org) as a state manager, [Chakra UI](https://chakra-ui.com) as a component library, and [Vite](https://vitejs.dev) as a build tool.
 
 ## Dependencies
 
@@ -22,18 +22,6 @@ The @emotion/styled package is for those who prefer to use the styled.div style 
 
 The CSS and web font files to easily self-host the “Roboto” font.
 
-### `@mui/icons-material`
-
-[Github](https://github.com/mui/material-ui) | [NPM](https://www.npmjs.com/package/@mui/icons-material)
-
-This package provides the Google Material icons packaged as a set of React components.
-
-### `@mui/material`
-
-[Github](https://github.com/mui/material-ui) | [NPM](https://www.npmjs.com/package/@mui/material)
-
-Quickly build beautiful React apps. MUI is a simple and customizable component library to build faster, beautiful, and more accessible React applications.
-
 ### `axios`
 
 [Github](https://github.com/axios/axios) | [NPM](https://www.npmjs.com/package/axios)
@@ -52,23 +40,11 @@ Formik is the world's most popular open source form library for React and React 
 
 MobX is a battle tested library that makes state management simple and scalable by transparently applying functional reactive programming (TFRP).
 
-### `mobx-easy`
-
-[Github](https://github.com/stolenng/mobx-easy) | [NPM](https://www.npmjs.com/package/mobx-easy)
-
-Mobx Easy is simple library that makes your day to day mobx usage easier and adds some extra abilities.
-
 ### `mobx-react`
 
 [Github](https://github.com/mobxjs/mobx) | [NPM](https://www.npmjs.com/package/mobx-react)
 
 Package with React component wrapper for combining React with MobX. Exports the observer decorator and other utilities. For documentation, see the MobX project. This package supports both React and React Native.
-
-### `prop-types`
-
-[Github](https://github.com/facebook/prop-types) | [NPM](https://www.npmjs.com/package/prop-types)
-
-Runtime type checking for React props and similar objects.
 
 ### `react`
 
@@ -107,12 +83,6 @@ The all-in-one Vite plugin for React projects.
 [Github](https://github.com/eslint/eslint) | [NPM](https://www.npmjs.com/package/eslint)
 
 ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
-
-### `eslint-config-airbnb`
-
-[Github](https://github.com/airbnb/javascript) | [NPM](https://www.npmjs.com/package/eslint-config-airbnb)
-
-This package provides Airbnb's .eslintrc as an extensible shared config.
 
 ### `eslint-config-prettier`
 
