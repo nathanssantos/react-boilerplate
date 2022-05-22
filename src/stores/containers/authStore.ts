@@ -1,4 +1,6 @@
 import { makeAutoObservable } from 'mobx';
+import Cookies from 'js-cookie';
+import type { AxiosResponse } from 'axios';
 import RootStore from './rootStore';
 import User from '../models/User';
 import api from '../../services/api';
@@ -6,19 +8,20 @@ import api from '../../services/api';
 export default class AuthStore {
   rootStore: RootStore;
   user: User | null = null;
-  status: FetchStatus = 'idle';
+  authenticateStatus: FetchStatus = 'idle';
+  getMeStatus: FetchStatus = 'idle';
 
   constructor(rootStore: RootStore) {
     makeAutoObservable(this, { rootStore: false });
     this.rootStore = rootStore;
+
+    if (Cookies.get('sveltetsboilerplate.token')?.length) void this.getMe();
   }
 
   get isAuthenticated() {
-    return !!this.user?.id;
-  }
-
-  get isFetching() {
-    return this.status === 'fetching';
+    return (
+      !!Cookies.get('sveltetsboilerplate.token')?.length && !!this.user?.id
+    );
   }
 
   authenticate = async (payload: {
@@ -26,31 +29,74 @@ export default class AuthStore {
     password: string;
   }): Promise<StoreActionResponse> => {
     try {
+      this.authenticateStatus = 'fetching';
+
       const { email, password } = payload;
 
-      this.status = 'fetching';
+      const response = await api.post('/auth/login', { email, password });
 
-      const response = await api.post('/auth', { email, password });
+      const { status, data } = response as Omit<AxiosResponse, 'data'> & {
+        data: {
+          access_token: string;
+          user: User;
+        };
+      };
 
-      const { data, status } = response;
-
-      if (status !== 200 || !data) {
-        this.unauthenticate();
+      if (status !== 200 || !data?.access_token || !data?.user) {
+        this.authenticateStatus = 'error';
 
         return {
-          status,
+          status: response?.status || 400,
         };
       }
 
-      this.user = new User(data);
+      Cookies.set('sveltetsboilerplate.token', data.access_token, {
+        expires: 7,
+      });
 
-      this.status = 'success';
+      api.defaults.headers.common['Authorization'] = data.access_token;
+
+      this.user = data.user;
+      this.authenticateStatus = 'success';
 
       return { status };
     } catch (error) {
       console.warn(error);
 
-      this.unauthenticate();
+      this.authenticateStatus = 'error';
+
+      return {
+        status: 400,
+      };
+    }
+  };
+
+  getMe = async (): Promise<StoreActionResponse> => {
+    try {
+      this.getMeStatus = 'fetching';
+
+      const response = await api.get('/auth/me');
+
+      const { status, data } = response as Omit<AxiosResponse, 'data'> & {
+        data: User;
+      };
+
+      if (status !== 200 || !data) {
+        this.getMeStatus = 'error';
+
+        return {
+          status: response?.status || 400,
+        };
+      }
+
+      this.user = data;
+      this.getMeStatus = 'success';
+
+      return { status };
+    } catch (error) {
+      console.warn(error);
+
+      this.getMeStatus = 'error';
 
       return {
         status: 400,
@@ -59,7 +105,8 @@ export default class AuthStore {
   };
 
   unauthenticate() {
-    this.status = 'idle';
+    api.defaults.headers.common['Authorization'] = '';
+    Cookies.remove('sveltetsboilerplate.token');
     this.user = null;
   }
 }
