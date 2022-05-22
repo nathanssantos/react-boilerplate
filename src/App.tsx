@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { RootStoreProvider } from './hooks';
 import { Router, ThemeProvider } from './components';
-import RootStore from './stores/containers/rootStore';
+import RootStore from './stores/rootStore';
 
 const App = () => {
   const [rootStore, setRootStore] = useState({} as RootStore);

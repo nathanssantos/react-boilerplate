@@ -3,8 +3,7 @@ import Cookies from 'js-cookie';
 import { AxiosError } from 'axios';
 import type { AxiosResponse } from 'axios';
 import RootStore from './rootStore';
-import User from '../models/User';
-import api from '../../services/api';
+import api from '../services/api';
 
 export default class AuthStore {
   rootStore: RootStore;
