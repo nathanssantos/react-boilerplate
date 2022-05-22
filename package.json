@@ -1,69 +1,28 @@
 {
-  "name": "react-boilerplate",
+  "name": "react-ts-boilerplate",
   "private": true,
-  "version": "1.0.0",
-  "description": "Boilerplate for React.js applications, built with Mobx as a state manager, Material UI as a component library, and Vite as a frontend build tool.",
-  "author": {
-    "name": "Nathan Silva Santos",
-    "email": "nathansilvasantos@gmail.com"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nathanssantos/react-boilerplate.git"
-  },
-  "bugs": {
-    "url": "https://github.com/nathanssantos/react-boilerplate/issues"
-  },
-  "homepage": "https://nathanssantos.github.io/react-boilerplate",
+  "version": "0.0.0",
   "scripts": {
-    "start": "vite",
-    "build": "vite build --base=./",
-    "preview": "vite preview",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d dist"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
-  "keywords": [
-    "react",
-    "boilerplate",
-    "eslint",
-    "mobx",
-    "material-ui",
-    "prettier",
-    "yup",
-    "formik",
-    "vite",
-    "vitejs"
-  ],
   "dependencies": {
-    "@emotion/react": "^11.8.1",
-    "@emotion/styled": "^11.8.1",
-    "@fontsource/roboto": "^4.5.3",
-    "@mui/icons-material": "^5.4.2",
-    "@mui/material": "^5.4.3",
-    "axios": "^0.26.0",
-    "formik": "^2.2.9",
-    "mobx": "^6.4.1",
-    "mobx-easy": "^1.0.11",
-    "mobx-react": "^7.3.0",
-    "prop-types": "^15.8.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^6.2.1",
-    "yup": "^0.32.11"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^1.0.7",
-    "eslint": "^8.9.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^8.4.0",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.28.0",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "gh-pages": "^3.2.3",
-    "prettier": "^2.5.1",
-    "vite": "^2.8.0"
+    "eslint-plugin-react": "^7.30.0",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.3",
+    "vite": "^2.9.9"
   }
 }
