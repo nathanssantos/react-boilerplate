@@ -1,5 +1,5 @@
 {
-  "name": "react-vite-boilerplate",
+  "name": "react-boilerplate",
   "private": true,
   "version": "1.0.0",
   "description": "Boilerplate for React.js applications, built with Mobx as a state manager, Material UI as a component library, and Vite as a frontend build tool.",
@@ -10,12 +10,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nathanssantos/react-vite-boilerplate.git"
+    "url": "git+https://github.com/nathanssantos/react-boilerplate.git"
   },
   "bugs": {
-    "url": "https://github.com/nathanssantos/react-vite-boilerplate/issues"
+    "url": "https://github.com/nathanssantos/react-boilerplate/issues"
   },
-  "homepage": "https://nathanssantos.github.io/react-vite-boilerplate",
+  "homepage": "https://nathanssantos.github.io/react-boilerplate",
   "scripts": {
     "start": "vite",
     "build": "vite build --base=./",
