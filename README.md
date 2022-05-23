@@ -1,4 +1,4 @@
-# React Vite Boilerplate
+# React TypeScript Boilerplate
 
 Boilerplate for [React.js](https://pt-br.reactjs.org) applications, built with [Mobx](https://mobx.js.org) as a state manager, [Chakra UI](https://chakra-ui.com) as a component library, and [Vite](https://vitejs.dev) as a build tool.
 
