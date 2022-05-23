@@ -7,19 +7,19 @@ const theme = extendTheme({
         scrollBehavior: 'smooth',
       },
       body: {
-        bg: 'gray.900',
-        color: 'gray.200',
+        bg: '#fff',
+        color: '#111',
       },
       svg: {
         overflow: 'initial',
       },
     },
   },
-  colors: {
-    purple: {
-      '500': '#78287A',
-    },
-  },
+  // colors: {
+  //   purple: {
+  //     '500': '#78287A',
+  //   },
+  // },
   fonts: {
     heading: 'Roboto',
     body: 'Roboto',

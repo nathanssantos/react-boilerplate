@@ -2,7 +2,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 
 const api = axios.create({
-  baseURL: 'https://api.url.com/api/v1',
+  baseURL: import.meta.env.VITE_API_URL,
   validateStatus: (status) => status !== 401,
 });
 

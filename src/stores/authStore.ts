@@ -34,16 +34,26 @@ export default class AuthStore {
     return !!Cookies.get('reacttsboilerplate.token')?.length && !!this.user?.id;
   }
 
+  setStatus = (
+    name: 'authenticateStatus' | 'getMeStatus',
+    status: FetchStatus,
+  ) => {
+    this[name] = status;
+  };
+
   authenticate = async (payload: {
     email: string;
     password: string;
   }): Promise<StoreActionResponse> => {
     try {
-      this.authenticateStatus = 'fetching';
+      this.setStatus('authenticateStatus', 'fetching');
 
       const { email, password } = payload;
 
-      const response = await api.post('/auth/login', { email, password });
+      const response = await api.post('/users/nathanssantos', {
+        email,
+        password,
+      });
 
       const { status, data } = response as Omit<AxiosResponse, 'data'> & {
         data: {
@@ -53,7 +63,7 @@ export default class AuthStore {
       };
 
       if (status !== 200 || !data?.access_token || !data?.user) {
-        this.authenticateStatus = 'error';
+        this.setStatus('authenticateStatus', 'error');
 
         return {
           status: response?.status || 400,
@@ -67,13 +77,13 @@ export default class AuthStore {
       api.defaults.headers.common['Authorization'] = data.access_token;
 
       this.user = data.user;
-      this.authenticateStatus = 'success';
+      this.setStatus('authenticateStatus', 'success');
 
       return { status };
     } catch (error) {
       console.warn(error);
 
-      this.authenticateStatus = 'error';
+      this.setStatus('authenticateStatus', 'error');
 
       return {
         status: 400,
@@ -83,16 +93,16 @@ export default class AuthStore {
 
   getMe = async (): Promise<StoreActionResponse> => {
     try {
-      this.getMeStatus = 'fetching';
+      this.setStatus('getMeStatus', 'fetching');
 
-      const response = await api.get('/auth/me');
+      const response = await api.get('/users/nathanssantos');
 
       const { status, data } = response as Omit<AxiosResponse, 'data'> & {
         data: User;
       };
 
       if (status !== 200 || !data) {
-        this.getMeStatus = 'error';
+        this.setStatus('getMeStatus', 'error');
 
         return {
           status: response?.status || 400,
@@ -100,13 +110,13 @@ export default class AuthStore {
       }
 
       this.user = data;
-      this.getMeStatus = 'success';
+      this.setStatus('getMeStatus', 'success');
 
       return { status };
     } catch (error) {
       console.warn(error);
 
-      this.getMeStatus = 'error';
+      this.setStatus('getMeStatus', 'error');
 
       return {
         status: 400,
@@ -114,9 +124,15 @@ export default class AuthStore {
     }
   };
 
-  unauthenticate() {
+  unauthenticate = () => {
     api.defaults.headers.common['Authorization'] = '';
     Cookies.remove('reacttsboilerplate.token');
+    this.reset();
+  };
+
+  reset = () => {
     this.user = null;
-  }
+    this.authenticateStatus = 'idle';
+    this.getMeStatus = 'idle';
+  };
 }
