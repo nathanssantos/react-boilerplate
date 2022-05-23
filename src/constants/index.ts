@@ -1,4 +1,5 @@
-import FormDefinitions from './FormDefinitions';
-import * as Messages from './Messages';
+import formDefinitions from './forms';
+import * as messages from './messages';
+import theme from './theme';
 
-export { FormDefinitions, Messages };
+export { formDefinitions, messages, theme };

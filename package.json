@@ -8,14 +8,20 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chakra-ui/core": "^0.8.0",
+    "@chakra-ui/react": "^2.1.0",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "@types/js-cookie": "^3.0.2",
     "axios": "^0.27.2",
     "formik": "^2.2.9",
+    "framer-motion": "^6.3.3",
     "js-cookie": "^3.0.1",
     "mobx": "^6.5.0",
     "mobx-react": "^7.4.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-icons": "^4.3.1",
     "react-router-dom": "^6.3.0",
     "yup": "^0.32.11"
   },

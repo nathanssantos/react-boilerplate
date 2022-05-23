@@ -1,5 +1,5 @@
 import * as Yup from 'yup';
-import { REQUIRED_FIELD, INVALID_EMAIL, PASSWORD_MIN_LENGTH } from './Messages';
+import { REQUIRED_FIELD, INVALID_EMAIL, PASSWORD_MIN_LENGTH } from './messages';
 
 const login = {
   schema: {
