@@ -5,7 +5,7 @@
   "semi": true,
   "jsxSingleQuote": true,
   "useTabs": false,
-  "printWidth": 80,
+  "printWidth": 96,
   "endOfLine": "lf",
   "arrowParens": "always"
 }
