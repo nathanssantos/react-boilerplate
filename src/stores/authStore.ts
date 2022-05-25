@@ -34,10 +34,7 @@ export default class AuthStore {
     return !!Cookies.get('reacttsboilerplate.token')?.length && !!this.user?.id;
   }
 
-  setStatus = (
-    name: 'authenticateStatus' | 'getMeStatus',
-    status: FetchStatus,
-  ) => {
+  setStatus = (name: 'authenticateStatus' | 'getMeStatus', status: FetchStatus) => {
     this[name] = status;
   };
 
