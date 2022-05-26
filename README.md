@@ -2,6 +2,38 @@
 
 Boilerplate for [React.js](https://pt-br.reactjs.org) applications, built with [Mobx](https://mobx.js.org) as a state manager, [Chakra UI](https://chakra-ui.com) as a component library, and [Vite](https://vitejs.dev) as a build tool.
 
+## Setup
+
+1 - Install the project dependencies:
+
+```
+yarn
+```
+
+2 - Install all the necessary extensions for VS Code:
+
+- Eslint
+- Prettier
+- EditorConfig
+
+## Running the project
+
+```
+yarn dev
+```
+
+## Build
+
+```
+yarn build
+```
+
+To visualize the preview:
+
+```
+yarn preview
+```
+
 ## Dependencies
 
 ### `@emotion/react`
