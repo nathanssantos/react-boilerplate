@@ -16,13 +16,9 @@ export default class AuthStore {
     this.rootStore = rootStore;
 
     api.interceptors.response.use(
-      (response) => {
-        return response;
-      },
+      (response) => response,
       (error: AxiosError) => {
-        if (error?.response?.status === 401) {
-          this.unauthenticate();
-        }
+        if (error?.response?.status === 401) this.unauthenticate();
         return error;
       },
     );
@@ -34,10 +30,7 @@ export default class AuthStore {
     return !!Cookies.get('reacttsboilerplate.token')?.length && !!this.user?.id;
   }
 
-  setStatus = (
-    name: 'authenticateStatus' | 'getMeStatus',
-    status: FetchStatus,
-  ) => {
+  setStatus = (name: 'authenticateStatus' | 'getMeStatus', status: FetchStatus) => {
     this[name] = status;
   };
 

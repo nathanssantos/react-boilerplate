@@ -1,6 +1,38 @@
 # React TypeScript Boilerplate
 
-Boilerplate for [React.js](https://pt-br.reactjs.org) applications, built with [Mobx](https://mobx.js.org) as a state manager, [Chakra UI](https://chakra-ui.com) as a component library, and [Vite](https://vitejs.dev) as a build tool.
+Boilerplate for [React](https://pt-br.reactjs.org) applications, built with [MobX](https://mobx.js.org) as a state manager, [Chakra UI](https://chakra-ui.com) as a component library, and [Vite](https://vitejs.dev) as a build tool.
+
+## Setup
+
+1 - Install the project dependencies:
+
+```
+yarn
+```
+
+2 - Install all the necessary extensions for VS Code:
+
+- Eslint
+- Prettier
+- EditorConfig
+
+## Running the project
+
+```
+yarn dev
+```
+
+## Build
+
+```
+yarn build
+```
+
+To visualize the preview:
+
+```
+yarn preview
+```
 
 ## Dependencies
 
@@ -119,12 +151,6 @@ React specific linting rules for eslint.
 [Github](https://github.com/facebook/react) | [NPM](https://www.npmjs.com/package/eslint-plugin-react-hooks)
 
 This ESLint plugin enforces the Rules of Hooks.
-
-### `gh-pages`
-
-[Github](https://github.com/tschaub/gh-pages) | [NPM](https://www.npmjs.com/package/gh-pages)
-
-Publish files to a gh-pages branch on GitHub (or any other branch anywhere else).
 
 ### `prettier`
 
