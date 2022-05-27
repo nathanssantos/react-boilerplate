@@ -1,6 +1,6 @@
 # React TypeScript Boilerplate
 
-Boilerplate for [React](https://pt-br.reactjs.org) applications, built with [MobX](https://mobx.js.org) as a state manager, [Chakra UI](https://chakra-ui.com) as a component library, and [Vite](https://vitejs.dev) as a build tool.
+WIP - Boilerplate for [React](https://pt-br.reactjs.org) applications, built with [MobX](https://mobx.js.org) as a state manager, [Chakra UI](https://chakra-ui.com) as a component library, and [Vite](https://vitejs.dev) as a build tool.
 
 ## Setup
 
